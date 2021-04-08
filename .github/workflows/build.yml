@@ -35,10 +35,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Get branch name
-        uses: nelonoel/branch-name@v1.0.1
-      - name: Print branch name
-        run: echo ${BRANCH_NAME}
       - run: env
       -
         name: Set up Docker Buildx
@@ -46,9 +42,9 @@ jobs:
         uses: docker/setup-buildx-action@v1
       - name: docker build and push
         run: |
-          make REGISTRY="localhost:5000" VERSION="${BRANCH_NAME}" all
-          make REGISTRY="localhost:5000" VERSION="${BRANCH_NAME}" push
-          make REGISTRY="localhost:5000" VERSION="${BRANCH_NAME}" push-short
-          make REGISTRY="localhost:5000" VERSION="${BRANCH_NAME}" push-latest
+          make REGISTRY="localhost:5000" VERSION="${GITHUB_SHA}" all
+          make REGISTRY="localhost:5000" VERSION="${GITHUB_SHA}" push
+          make REGISTRY="localhost:5000" VERSION="${GITHUB_SHA}" push-short
+          make REGISTRY="localhost:5000" VERSION="${GITHUB_SHA}" push-latest
       - run: docker images
       
