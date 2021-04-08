@@ -47,5 +47,5 @@ jobs:
             PLUGIN_VERSION=${BRANCH_NAME}
           file: docker/Dockerfile.ubuntu20.04
           push: true
-          tags: localhost:5000/k8s-device-plugin:${BRANCH_NAME}
+          tags: localhost:5000/k8s-device-plugin:master
 
