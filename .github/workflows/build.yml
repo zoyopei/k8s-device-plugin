@@ -38,6 +38,7 @@ jobs:
         uses: nelonoel/branch-name@v1.0.1
       - name: Print branch name
         run: echo ${BRANCH_NAME}
+      - run: env
       - name: Build and push Docker images
         uses: docker/build-push-action@v2.4.0
         with:
