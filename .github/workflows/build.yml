@@ -47,4 +47,7 @@ jobs:
         run: |
           make REGISTRY="localhost:5000" VERSION="${BRANCH_NAME}" all
           make REGISTRY="localhost:5000" VERSION="${BRANCH_NAME}" push
+          make REGISTRY="localhost:5000" VERSION="${BRANCH_NAME}" push-short
+          make REGISTRY="localhost:5000" VERSION="${BRANCH_NAME}" push-latest
+      - run: docker images
       
