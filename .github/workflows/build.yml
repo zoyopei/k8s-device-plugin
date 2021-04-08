@@ -23,6 +23,7 @@ jobs:
     - run: golint -set_exit_status .
     - run: go vet .
     - run: go build
+    - run: ls -al
 
   docker:
     runs-on: ubuntu-latest
