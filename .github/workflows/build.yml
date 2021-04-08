@@ -45,6 +45,6 @@ jobs:
         uses: docker/setup-buildx-action@v1
       - name: docker build and push
         run: |
-          make REGISTRY="${CI_REGISTRY_IMAGE}" VERSION="${BRANCH_NAME}" all
-          make REGISTRY="${CI_REGISTRY_IMAGE}" VERSION="${BRANCH_NAME}" push
+          make REGISTRY="localhost:5000" VERSION="${BRANCH_NAME}" all
+          make REGISTRY="$localhost:5000" VERSION="${BRANCH_NAME}" push
       
